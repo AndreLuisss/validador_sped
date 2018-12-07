@@ -1,0 +1,33 @@
+from django.db import models
+from participantes.models import Participantes
+
+
+class Notas(models.Model):
+    COD_PART = models.ForeignKey(Participantes, on_delete=models.CASCADE)
+    IND_OPER = models.BooleanField(null=False, blank=False)
+    IND_EMIT = models.BooleanField(null=False,blank=False)
+    COD_MOD = models.CharField(max_length=2, null=False, blank=False)
+    COD_SIT = models.CharField(max_length=2, null=False, blank=False)
+    SER = models.CharField(max_length=3)
+    NUM_DOC = models.CharField(max_length=9, null=False, blank=False)
+    CHV_NFE = models.CharField(max_length=44)
+    DT_DOC = models.DateField(null=False, blank=False)
+    DT_E_S = models.DateField(null=False, blank=False)
+    VL_DOC = models.FloatField(null=False, blank=False)
+    IND_PGTO = models.CharField(null=False, blank=False,max_length=1)
+    VL_DESC = models.FloatField(default=0.00)
+    VL_ABAT_NT = models.FloatField(default=0.00)
+    VL_MERC = models.FloatField(default=0.00)
+    IND_FRT = models.CharField(default=0, max_length=1)
+    VL_FRT = models.FloatField(default=0.00)
+    VL_SEG = models.FloatField(default=0.00)
+    VL_OUT_DA = models.FloatField(default=0.00)
+    VL_BC_ICMS = models.FloatField(default=0.00)
+    VL_ICMS = models.FloatField(default=0.00)
+    VL_BC_ICMS_ST = models.FloatField(default=0.00)
+    VL_ICMS_ST = models.FloatField(default=0.00)
+    VL_IPI = models.FloatField(default=0.00)
+    VL_PIS = models.FloatField(default=0.00)
+    VL_COFINS = models.FloatField(default=0.00)
+    VL_PIS_ST = models.FloatField(default=0.00)
+    VL_COFINS_ST = models.FloatField(default=0.00)
